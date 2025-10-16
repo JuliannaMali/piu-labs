@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="pl">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Login</title>
+    <link rel="stylesheet" href="css/main.css" />
+  </head>
+
+  <body>
+    <nav>
+      <a href="login.html">Login</a>
+      <a href="konkurs.html">Konkurs</a>
+      <a href="uwagi.html">Uwagi</a>
+      <a href="..">Powrót</a>
+    </nav>
+
+    <h1 id="login">LOGOWANIE</h1>
+
+    <main>
+      <form action="https://httpbin.org/post" method="post" id="log_in">
+        <label for="email">Email:</label><br />
+        <input type="email" name="email" placeholder="test@gmail.com" /><br />
+        <label for="password">Hasło</label><br />
+        <input type="password" name="password" /><br />
+        <input type="submit" value="Zaloguj" id="data" /><br />
+        <input type="reset" value="Wyczyść dane" id="data" />
+      </form>
+    </main>
+  </body>
+</html>
