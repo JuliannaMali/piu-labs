@@ -1,0 +1,190 @@
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 1rem;
+  background-color: #fcfefc;
+}
+
+legend {
+  font-weight: bold;
+}
+
+label {
+  margin: 10px;
+}
+.container {
+  border: solid 2px;
+  display: flex;
+}
+
+fieldset,
+.container {
+  padding: 12px;
+  margin: 25px auto 25px auto;
+  background-color: #f4f6dc;
+  border-radius: 5px;
+  border-color: #dc8e4c;
+}
+/* ------------------------------------------------- */
+
+/* niebieski */
+body:has(input[type='radio'][value='blue']:checked) .container {
+  flex-wrap: wrap;
+  justify-content: space-between;
+  @media (max-width: 1024px) {
+    display: block;
+    justify-items: center;
+    flex-wrap: none;
+    justify-content: center;
+  }
+}
+
+body:has(input[type='radio'][value='blue']:checked) .container .item {
+  background-color: blue;
+  border-radius: 8px;
+  width: 29%;
+  height: 4rem;
+  margin: 15px;
+  color: white;
+  text-align: center;
+  margin-bottom: 10px;
+  align-content: center;
+
+  @media (max-width: 1024px) {
+    width: 50%;
+    margin-bottom: 20px;
+    height: 3.5rem;
+  }
+}
+
+/* czerwony */
+body:has(input[type='radio'][value='red']:checked) .container {
+  flex-wrap: nowrap;
+  justify-content: space-between;
+  @media (max-width: 1024px) {
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+}
+
+/* czerwone 1 item */
+body:has(input[type='radio'][value='red']:checked)
+  .container
+  .item:first-child {
+  order: 1;
+  flex-grow: 2;
+  font-weight: bold;
+  @media (max-width: 1024px) {
+    width: 100%;
+  }
+}
+
+body:has(input[type='radio'][value='red']:checked)
+  .container
+  .item:first-child::after {
+  content: '(Jestem większy i na środku!)';
+  display: block;
+  font-weight: 1;
+  font-size: 0.8rem;
+}
+
+/* czerwone wszystkie item */
+body:has(input[type='radio'][value='red']:checked) .container .item {
+  background-color: red;
+  width: 15%;
+  margin: 10px;
+  border-radius: 10px;
+  height: 4.5rem;
+  text-align: center;
+  align-content: center;
+  color: white;
+  @media (max-width: 1024px) {
+    width: 7rem;
+  }
+
+  &:nth-child(2) {
+    order: 0;
+    flex-grow: 1;
+  }
+  &:nth-child(3) {
+    order: 0;
+    flex-grow: 1;
+  }
+
+  &:nth-child(4) {
+    order: 2;
+    flex-grow: 1;
+  }
+  &:nth-child(5) {
+    order: 2;
+    flex-grow: 1;
+  }
+}
+
+/* zielony kontener */
+body:has(input[type='radio'][value='green']:checked) .container {
+  position: relative;
+  @media (max-width: 1024px) {
+    flex-direction: column-reverse;
+    align-items: flex-end;
+  }
+}
+
+body:has(input[type='radio'][value='green']:checked) .container .item {
+  background-color: green;
+  margin: 10px;
+  height: 3em;
+  border-radius: 8px;
+  text-align: center;
+  align-content: center;
+  color: white;
+  position: relative;
+
+  &:first-child::before {
+    content: '😀';
+    position: absolute;
+    left: 0.2em;
+    font-size: 2rem;
+    top: 2%;
+  }
+  &:first-child::after {
+    content: '😀';
+    position: absolute;
+    right: 0.2em;
+    font-size: 2rem;
+    top: 2%;
+  }
+
+  &:nth-child(1) {
+    flex-grow: 5;
+    align-items: center;
+    justify-content: space-between;
+    @media (max-width: 1024px) {
+      width: 90%;
+    }
+  }
+  &:nth-child(2) {
+    flex-grow: 4;
+    @media (max-width: 1024px) {
+      width: 75%;
+    }
+  }
+  &:nth-child(3) {
+    flex-grow: 3;
+    @media (max-width: 1024px) {
+      width: 60%;
+    }
+  }
+  &:nth-child(4) {
+    flex-grow: 2;
+    @media (max-width: 1024px) {
+      width: 45%;
+    }
+  }
+  &:nth-child(5) {
+    flex-grow: 1;
+    @media (max-width: 1024px) {
+      width: 30%;
+    }
+  }
+}
