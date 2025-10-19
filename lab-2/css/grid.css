@@ -1,0 +1,167 @@
+/* Reset stylów */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  font-family: Arial, sans-serif;
+  max-width: 1200px;
+  background-color: #eeeeee;
+  margin: auto;
+}
+
+main,
+aside {
+  h1,
+  h2,
+  h3,
+  p {
+    margin-bottom: 1rem;
+    line-height: 1.5;
+  }
+}
+
+.container {
+  display: grid;
+  grid-template-columns: minmax(auto, auto);
+  grid-auto-rows: minmax(auto, auto);
+  grid-template-areas:
+    'header'
+    'nav'
+    'main'
+    'sidebar'
+    'footer';
+}
+
+@media (min-width: 1024px) {
+  .container {
+    display: grid;
+    grid-template-columns: 3fr 1fr;
+    grid-template-areas:
+      'header header'
+      'nav nav'
+      'main sidebar'
+      'footer footer';
+  }
+
+  body:has(.container) aside {
+    height: auto !important;
+    background-color: #d4efdf;
+  }
+  body:has(.container) aside > div {
+    display: grid;
+    grid-template-columns: repeat(2, 0.3fr);
+    justify-items: center;
+    gap: 0.5rem 0.2rem !important;
+  }
+  aside > div > span {
+    font-size: 4rem !important;
+    margin: 0;
+    padding: 0;
+  }
+
+  body:has(.container) nav {
+    text-align: left;
+    padding: 0px 0px 0px 20px;
+  }
+}
+.container > * > * {
+  margin: 1rem;
+}
+
+/* === */
+header {
+  display: inline-flex;
+  grid-area: header;
+  background-color: #f49c11;
+  color: white;
+}
+
+header > h1 {
+  margin-left: 3px !important;
+}
+
+.logo::before {
+  content: 'Logo';
+  padding-right: 3px;
+  padding-left: 3px;
+}
+
+.logo {
+  color: black;
+  border-radius: 3px;
+  background-color: #fdfffe;
+  text-align: center;
+  align-content: center;
+  min-height: 3.5vh;
+  padding: 3px 14px 3px 11px;
+  font-weight: bold;
+  margin-right: 10px;
+}
+/* === */
+
+nav {
+  grid-area: nav;
+  background-color: #2880b9;
+  text-align: center;
+  min-height: 5vh;
+  align-content: center;
+  padding: 10px 0px 10px 0px;
+}
+nav > a {
+  color: white;
+  text-decoration: none;
+  margin: 6px !important;
+  font-weight: bold;
+  min-height: 3vh;
+  margin-top: 30px !important;
+}
+
+/* === */
+main {
+  grid-area: main;
+  background-color: #f4f4f4;
+}
+main > h2,
+p {
+  color: #34476a;
+}
+
+/* ===*/
+aside {
+  grid-area: sidebar;
+  background-color: #d4efdf;
+  height: 11rem;
+}
+aside > p {
+  font-weight: bold;
+  font-size: 15px;
+}
+aside > div {
+  display: flex;
+  flex-wrap: nowrap;
+  overflow-x: auto;
+  height: auto;
+  text-align: center;
+  justify-content: center;
+}
+aside > div > span {
+  font-size: 3rem;
+  padding: 0px 5px 0px 5px;
+}
+
+/* === */
+
+footer {
+  grid-area: footer;
+  background-color: #26ae5f;
+  text-align: center;
+}
+
+footer > p {
+  color: white;
+  font: 14px;
+  padding-top: 6px;
+  min-height: 1.8vh;
+}
