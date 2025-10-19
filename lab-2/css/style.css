@@ -7,13 +7,40 @@ html {
 body {
   margin: 1rem;
   padding: 0;
+  background-color: rgb(202, 255, 255);
+}
+
+main {
+  margin: auto;
+  width: 50vw;
+  align-items: center;
+  justify-items: center;
+}
+
+main > h1 {
+  padding-bottom: 20px;
+}
+
+main > nav {
+  padding: 20px 0px 20px 0px;
+  background-color: rgb(49, 2, 63);
+  width: 20vw;
+  border-radius: 40px;
+  justify-items: center;
 }
 
 a {
-  color: #0066cc; /* niebieski kolor linków */
-  text-decoration: none; /* bez podkreślenia */
+  display: block;
+  text-align: center;
+  color: black;
+  text-decoration: none;
   font-size: 1.4rem;
+  padding: 10px;
+  background-color: aliceblue;
+  border-radius: 50px;
+  margin: 20px;
+  width: 10vw;
 }
 a:hover {
-  text-decoration: underline; /* podkreślenie przy najechaniu */
+  background-color: rgb(238, 201, 250);
 }
