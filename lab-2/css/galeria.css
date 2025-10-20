@@ -1,0 +1,59 @@
+html {
+  background-color: rgb(36, 36, 36);
+  margin: auto;
+  text-align: center;
+}
+body {
+  margin: auto;
+  margin-bottom: 4rem;
+  color: aliceblue;
+}
+
+h1 {
+  background-color: gray;
+  padding: 40px;
+  width: 30em;
+  margin: auto;
+  margin-top: 20px;
+  margin-bottom: 40px;
+  border-radius: 50px;
+}
+
+.container {
+  display: grid;
+  grid-template-columns: 1fr;
+}
+
+@media (min-width: 1200px) {
+  .container {
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+  }
+}
+figure {
+  margin: 0 !important;
+}
+
+figcaption {
+  width: 25em;
+}
+picture > * {
+  border-radius: 20px;
+  height: 30em;
+  width: 30em;
+}
+
+picture:hover > * {
+  box-shadow: rgb(190, 190, 190) 0px 0px 30px;
+}
+figcaption {
+  color: aliceblue;
+  line-height: 1.5;
+  margin: auto;
+  margin-bottom: 40px;
+  margin-top: 10px;
+  border-radius: 5px;
+  border: solid black 1px;
+  width: 10rem;
+  background-color: rgb(78, 78, 78);
+}
