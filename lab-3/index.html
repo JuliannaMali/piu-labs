@@ -1,12 +1,72 @@
 <!DOCTYPE html>
-<html lang="pl">
+<html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <title>Lab 3</title>
-    <link rel="stylesheet" href="css/style.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="css/polo.css" />
+    <title>Polo</title>
   </head>
   <body>
-    <h1>Lab 3</h1>
-    <a href="..">Powrót</a>
+    <div class="container">
+      <div class="image">
+        <!--  -->
+      </div>
+      <div class="card">
+        <div class="card_header">
+          <h2>Koszulka Polo</h2>
+          <p>Promocja!</p>
+        </div>
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Quibusdam
+          quis adipisci maiores.
+        </p>
+
+        <div class="colour">
+          <h4>Kolor</h4>
+          <div class="radio_color_buttons">
+            <input
+              id="blue"
+              type="radio"
+              name="colour_version"
+              value="blue"
+              checked
+            />
+            <label for="blue" value=""> </label>
+            <input id="red" type="radio" name="colour_version" value="red" />
+            <label for="red"></label>
+            <input
+              id="green"
+              type="radio"
+              name="colour_version"
+              value="green"
+            />
+            <label for="green"></label>
+            <input
+              id="yellow"
+              type="radio"
+              name="colour_version"
+              value="yellow"
+            />
+            <label for="yellow"></label>
+          </div>
+        </div>
+        <div class="size">
+          <h4>Rozmiar</h4>
+          <div class="radio_size_buttons">
+            <input id="S" type="radio" name="size_version" value="S" checked />
+            <label for="S">S</label>
+            <input id="M" type="radio" name="size_version" value="M" />
+            <label for="M">M</label>
+            <input id="L" type="radio" name="size_version" value="L" />
+            <label for="L">L</label>
+            <input id="XL" type="radio" name="size_version" value="XL" />
+            <label for="XL">XL</label>
+          </div>
+        </div>
+
+        <h2>59,99zł</h2>
+        <h3 class="basket">🛒 Do koszyka</h3>
+      </div>
+    </div>
   </body>
 </html>
