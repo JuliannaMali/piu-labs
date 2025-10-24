@@ -27,6 +27,7 @@ body {
   display: flex !important;
   gap: 30px;
   flex-wrap: wrap;
+  transition: transform 0.2s ease-in-out;
 
   .image {
     display: block;
@@ -79,6 +80,7 @@ body {
       border-radius: 5px;
       background-color: var(--change_background);
       color: white;
+      animation: pulse 1.5s infinite ease-in-out;
     }
   }
 
@@ -151,6 +153,8 @@ body {
       input:checked + label {
         background-color: var(--change_background);
         color: white;
+        animation: spin 0.8s ease-in-out;
+        animation: label_size_change 3s ease-in-out;
       }
       label {
         display: inline-block;
@@ -180,13 +184,67 @@ body {
   justify-items: center;
   background-color: var(--change_background);
   color: white;
+  transition: transform 0.3s ease;
 }
+.basket:hover {
+  transform: scale(0.7);
+}
+
+label {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+label:hover {
+  transform: scale(1.2);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+  z-index: 1;
+}
+
+/* animacje */
+
+@keyframes pulse {
+  0%,
+  100% {
+    transform: scale(0.9);
+  }
+  50% {
+    transform: scale(1.1);
+  }
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  50% {
+    transform: rotate(360deg);
+  }
+  100% {
+    transform: rotate(720deg);
+  }
+}
+
+@keyframes label_size_change {
+  0% {
+    transform: scale(1);
+  }
+  25% {
+    transform: scale(0.6);
+  }
+  75% {
+    transform: scale(1.2);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+/* ================================================================ */
 
 body:has(input[type='radio'][value='blue']:checked) {
   --change_background: #1e5a9c;
   --image: url('../images/polo_b.png');
   .colour > .radio_color_buttons > label[for='blue'] {
-    background: radial-gradient(circle, #1e5a9c 55%, #eeeeee 20%) !important;
+    background: radial-gradient(circle, #1e5a9c 55%, #eee 20%) !important;
   }
 }
 
