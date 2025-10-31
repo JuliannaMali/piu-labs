@@ -1,19 +1,190 @@
-/* Minimalny reset  */
+/* Minimalny reset */
 html {
-  font-size: 16px; /* bazowy rozmiar czcionki */
-  font-family: system-ui, sans-serif; /* font systemowy */
-  line-height: 1.5; /* lepsza czytelność */
+  font-size: 1rem;
+  font-family: system-ui, sans-serif;
+  line-height: 1.5;
 }
 body {
   margin: 1rem;
   padding: 0;
+  min-width: fit-content;
+  background-color: #cbf0ff;
 }
 
-a {
-  color: #0066cc; /* niebieski kolor linków */
-  text-decoration: none; /* bez podkreślenia */
-  font-size: 1.4rem;
+body > * {
+  margin: auto;
+  width: 95%;
 }
-a:hover {
-  text-decoration: underline; /* podkreślenie przy najechaniu */
+
+h1 {
+  width: 20%;
+  text-align: center;
+  padding: 1.25rem 0;
+  border-radius: 1.25rem;
+  background-color: #c193ec;
+  box-shadow: 0 0 2rem -0.05rem #8f59c2;
+  color: #4b2272;
+  font-size: 1.5rem;
+}
+
+.kanban-container {
+  margin: 2rem auto;
+  background-color: #9ee4ff;
+  padding: 1.25rem;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  align-items: flex-start;
+  border: 0.3rem solid rgb(71, 96, 165);
+  border-radius: 0.25rem;
+  gap: 1rem;
+}
+
+.col {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-areas:
+    'header header header2'
+    'menu menu menu'
+    'note note note';
+  gap: 1rem;
+  width: 30%;
+  background-color: #c9b3f1;
+  padding: 1rem;
+  justify-items: center;
+  align-items: center;
+  border: 0.2rem solid rgb(31, 14, 36);
+  border-radius: 0.625rem;
+
+  h3 {
+    grid-area: header;
+    font-size: 1.25rem;
+    width: 50%;
+    padding: 0.5rem;
+    border-radius: 0.3125rem;
+    background-color: rgb(93, 50, 104);
+    color: white;
+    border: 0.125rem solid rgb(31, 14, 36);
+    text-align: center;
+  }
+
+  h4 {
+    grid-area: header2;
+    border: 0.0625rem solid black;
+    height: 2rem;
+    width: 2rem;
+    padding: 0.25rem;
+    text-align: center;
+    border-radius: 20%;
+    background-color: rgb(93, 50, 104);
+    color: white;
+  }
+
+  .menu {
+    grid-area: menu;
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+    button {
+      padding: 0.8rem;
+      border-radius: 0.625rem;
+      background-color: rgb(93, 50, 104);
+      color: white;
+      font-weight: bolder;
+      width: 25%;
+      transition: transform 0.2s ease;
+    }
+  }
+}
+
+.kartki {
+  grid-area: note;
+  width: 100%;
+  text-align: center;
+
+  .kartka {
+    width: 100%;
+    border: 0.125rem solid rgb(31, 14, 36);
+    border-radius: 0.625rem;
+    box-shadow: 0 0 0.9375rem -0.0625rem rgba(66, 68, 90, 0.9);
+    margin-bottom: 0.625rem;
+
+    .notatkaMenu {
+      display: inline-flex;
+      width: 98%;
+      margin: 0.5rem auto;
+
+      textarea {
+        border-radius: 1.25rem;
+        width: 90%;
+        text-align: center;
+      }
+
+      .usun {
+        border: none;
+        height: 1.5rem;
+        border-radius: 50%;
+        background-color: white;
+        margin-left: 0.625rem;
+        cursor: pointer;
+        transition: transform 0.2s ease;
+      }
+    }
+
+    .kartkaMenu {
+      display: flex;
+      justify-content: space-around;
+      margin-top: 0.5rem;
+
+      .arrow {
+        background-color: white;
+        border: none;
+        border-radius: 0.9375rem;
+        height: 2rem;
+        padding: 0.5rem;
+        cursor: pointer;
+        transition: transform 0.2s ease;
+      }
+
+      .koloruj {
+        padding: 0.8rem;
+        border-radius: 0.625rem;
+        border: 0.125rem solid black;
+        background-color: rgb(93, 50, 104);
+        color: white;
+        font-weight: bold;
+        cursor: pointer;
+        margin-bottom: 2%;
+        transition: transform 0.2s ease;
+      }
+    }
+  }
+}
+
+/* Responsive */
+@media (max-width: 1300px) {
+  .kanban-container {
+    flex-direction: column;
+    gap: 2rem;
+  }
+  .col {
+    width: 90%;
+  }
+}
+
+/* Hide arrows for first/last columns */
+#Zrobione {
+  #Right {
+    visibility: hidden;
+  }
+}
+
+#DoZrobienia {
+  #Left {
+    visibility: hidden;
+  }
+}
+button:hover {
+  cursor: pointer;
+  transform: scale(1.2);
 }

@@ -4,9 +4,44 @@
     <meta charset="UTF-8" />
     <title>Lab 4</title>
     <link rel="stylesheet" href="css/style.css" />
+    <script src="js/script.js" defer></script>
   </head>
   <body>
-    <h1>Lab 4</h1>
-    <a href="..">Powrót</a>
+    <h1>Kanban</h1>
+
+    <div class="kanban-container">
+      <div id="DoZrobienia" class="col">
+        <h3>Do zrobienia</h3>
+        <h4 id="counter1"></h4>
+        <div class="menu">
+          <button type="button" class="dodaj">Dodaj</button>
+          <button class="kolorujKoumne">Koloruj kolumnę</button>
+          <button class="sort">Sortuj od najstarszych</button>
+        </div>
+        <div id="1" class="kartki"></div>
+      </div>
+
+      <div id="WTrakcie" class="col">
+        <h3>W trakcie</h3>
+        <h4 id="counter2"></h4>
+        <div class="menu">
+          <button type="button" class="dodaj">Dodaj</button>
+          <button class="kolorujKoumne">Koloruj kolumnę</button>
+          <button class="sort">Sortuj od najstarszych</button>
+        </div>
+        <div id="2" class="kartki"></div>
+      </div>
+
+      <div id="Zrobione" class="col">
+        <h3>Zrobione</h3>
+        <h4 id="counter3"></h4>
+        <div class="menu">
+          <button type="button" class="dodaj">Dodaj</button>
+          <button class="kolorujKoumne">Koloruj kolumnę</button>
+          <button class="sort">Sortuj od najstarszych</button>
+        </div>
+        <div id="3" class="kartki"></div>
+      </div>
+    </div>
   </body>
 </html>
