@@ -1,0 +1,113 @@
+/*  */
+
+html {
+  font-size: 1rem;
+  font-family: system-ui, sans-serif;
+  line-height: 1.5;
+  min-width: 750px !important;
+}
+body {
+  margin: 1rem;
+  padding: 0;
+  min-width: fit-content;
+  text-align: center;
+  background-color: aliceblue;
+}
+
+/* tekst */
+h2 {
+  width: 20%;
+  margin: 40px auto 10px auto;
+  padding: 5px;
+  background-color: rgb(25, 8, 121);
+  color: aliceblue;
+  border-radius: 20px;
+}
+
+.menu {
+  width: 40%;
+  margin: auto;
+  padding: 10px;
+  display: inline-flex;
+  flex-direction: column;
+  align-items: center;
+
+  .dodaj,
+  .koloruj {
+    margin: 10px;
+    padding: 5px;
+    width: 60%;
+
+    display: inline-flex;
+    justify-content: space-around;
+    font-weight: bold;
+
+    > * {
+      border-radius: 20px;
+      padding: 10px;
+      width: 40%;
+      min-width: 85px !important;
+      background-color: rgb(121, 8, 121);
+      color: aliceblue;
+      font-weight: bolder;
+      border: none;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    > *:hover {
+      transform: scale(1.1);
+      box-shadow: 0 5px 15px rgb(85, 1, 85);
+      z-index: 1;
+      cursor: pointer;
+    }
+  }
+
+  .counters {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    > * {
+      margin: 5px;
+      border: 2px solid rgb(110, 36, 110);
+      padding: 10px;
+      border-radius: 50px;
+      background-color: rgb(228, 158, 228);
+    }
+  }
+}
+
+/* ksztalty */
+
+#board {
+  display: flex;
+  flex-wrap: wrap;
+
+  width: 75%;
+  min-height: 100px;
+
+  background-color: rgb(74, 57, 173);
+
+  border: 4px rgb(183, 172, 241) solid;
+  border-radius: 10px;
+
+  padding: 10px;
+  margin: 10px auto 20px auto;
+}
+
+#board > * {
+  width: 4rem;
+  height: 4rem;
+  margin: 1%;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.shape:hover {
+  transform: scale(1.1);
+  box-shadow: 0 5px 15px rgb(130, 115, 204);
+  z-index: 1;
+  cursor: pointer;
+}
+div.shape.circle {
+  border-radius: 100px;
+}
